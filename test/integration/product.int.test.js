@@ -34,7 +34,23 @@ it("GET /product/:productId", async () => {
   expect(response.body.description).toBe(firstProduct.description);
 });
 
-it("GET id doenst exist /api/products/:productId", async () => {
+it("GET id doenst exist /product/:productId", async () => {
   const response = await request(app).get("/product/617a76c6e077fa341d1b120d");
   expect(response.statusCode).toBe(404);
+});
+
+it("PUT /product", async () => {
+  const res = await request(app)
+    .put("/product/" + firstProduct._id)
+    .send({ name: "updated name", description: "updated desription" });
+  expect(res.statusCode).toBe(200);
+  expect(res.body.name).toBe("updated name");
+  expect(res.body.description).toBe("updated desription");
+});
+
+it("should return 404 on PUT /product", async () => {
+  const res = await request(app)
+    .put("/product" + "617a76c6e077fa341d1b120d")
+    .send({ name: "updated name", description: "updated desription" });
+  expect(res.statusCode).toBe(404);
 });
