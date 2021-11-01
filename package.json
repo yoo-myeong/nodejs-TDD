@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoo-myeong/nodejs-TDD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoo-myeong/nodejs-TDD/issues"
+  },
+  "homepage": "https://github.com/yoo-myeong/nodejs-TDD#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "node-mocks-http": "^1.11.0",
+    "supertest": "^6.1.6"
+  }
+}
