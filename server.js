@@ -17,5 +17,11 @@ app.use(express.json());
 
 app.use("/product", productRoute);
 
+app.use((err, req, res, next) => {
+  res.status(500).json({ msg: "server error" });
+});
+
 app.listen(8000);
 console.log("server is started");
+
+module.exports = app;
